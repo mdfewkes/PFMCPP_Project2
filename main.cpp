@@ -16,15 +16,11 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ float
+ bool
+ double
+ char
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -54,62 +50,127 @@ video: Chapter 2 - Part 3
 //2)
 void variableDeclarations()
 {
-    //example:
-    int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
-    
-    
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
-}
-/*
- 10 functions
- example:
- */
-bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
-{ 
-    ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
-    return {}; //if your function returns something other than void, add 'return {};' at the end of it.
-} 
+    int foo = 2500;
+    int bar = 12000;
+    int blow = 80;
 
+    bool paused = true;
+    bool hasIce = false;
+    bool useHands = true; //does this work?
+
+    char andrew = 'f';
+    char isaac = 'a';
+    char jacob = 'l';
+
+    float andria = 1.0f;
+    float isabell = 2.0f;
+    float jannet = 3.0f;
+
+    double trouble = 10.0;
+    double bubble = 20.0;
+    double rubble = 30.0;
+    
+    
+    
+    ignoreUnused(foo, bar, blow, paused, hasIce, useHands, andrew, isaac, jacob, andria, isabell, jannet, trouble, bubble, rubble); //passing each variable declared to the ignoreUnused() function
+}
 /*
  1)
  */
+int getReportQueueCount(int rentalLocation = 0)
+{
+   ignoreUnused(rentalLocation);
+
+   return {};
+}
 
 /*
  2)
  */
+bool theSkyIsBlue(double colourFrequency, bool eyesOpen = true)
+{ 
+    ignoreUnused(colourFrequency, eyesOpen); 
+
+    return {}; 
+} 
 
 /*
  3)
  */
+char gradeForStudent(float testPercentage = 100.0f, bool studentCheated = true)
+{ 
+    ignoreUnused(testPercentage, studentCheated); 
+
+    return {}; 
+} 
 
 /*
  4)
  */
+float rentalTimeRemaining(int rentalReservationNumber, int rentalLocation = 0)
+{
+   ignoreUnused(rentalLocation, rentalReservationNumber);
+
+   return {};
+}
 
 /*
  5)
  */
+double getWeight(double productA, double productB)
+{
+    ignoreUnused(productA, productB);
+
+    return {};
+}
 
 /*
  6)
  */
+void queueReportGeneration(double startTime, double endTime, int rentalLocation = 0)
+{
+   ignoreUnused(rentalLocation, startTime, endTime);
+}
 
 /*
  7)
  */
+double getHeight(double productA, double productB = 10.0)
+{
+    ignoreUnused(productA, productB);
+
+    return {};
+}
 
 /*
  8)
  */
+char getChar(char a, char b)
+{
+    ignoreUnused(a, b);
+
+    return {};
+}
 
 /*
  9)
  */
+float whatFrequency(int midiNote, float noteBend = 0.0f)
+{ 
+    ignoreUnused(midiNote, noteBend); 
+
+    return {}; 
+} 
 
 /*
  10)
  */
+int djNextTrack(int hour, int peopleOnTheDancefloor = 0)
+{ 
+    ignoreUnused(hour, peopleOnTheDancefloor); 
+
+    return {}; 
+} 
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -127,31 +188,28 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 
 int main()
 {
-    //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    auto carRented = rentACar(6, 2); 
-    
     //1)
-    
+    auto reportCount = getReportQueueCount();
     //2)
-    
+    auto thisSky = theSkyIsBlue(212.5);
     //3)
-    
+    auto grade = gradeForStudent(55.55f);
     //4)
-    
+    auto joyRide = rentalTimeRemaining(1565624);
     //5)
-    
+    auto weight = getWeight(15.5, 15.5);
     //6)
-    
+    queueReportGeneration(2.0, 7.8);
     //7)
-    
+    auto size = getHeight(5.5);
     //8)
-    
+    auto letter = getChar('a', 'b');
     //9)
-    
+    auto vibrate = whatFrequency(40);
     //10)
+    auto nextSong = djNextTrack(5);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(reportCount, thisSky, grade, joyRide, weight, size, letter, vibrate, nextSong);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
